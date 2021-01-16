@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platzi video</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<style>
+    .main-not-found{
+        background: linear-gradient(#21C08B, #AB88FF);
+    }
+    .main-not-found__container{
+        min-height: calc(100vh - 200px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .main-not-found__container h1{
+        color: white;
+        font-size: 40px;
+    }
+    .main-not-found__container h2{
+        color: white;
+        font-size: 24px;
+    }
+    .animated {
+        animation-duration: 2.5s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+    }
+    @keyframes pulse {
+        0% {transform: scale(1);}
+        50% {transform: scale(1.1);}
+        100% {transform: scale(1);}
+    }
+    .pulse {
+        animation-name: pulse;
+        animation-duration: 1s;
+    }
+</style>
+
+<body>
+    <header class="header-sesion"> <img class="header__img" src="./assets/img/logo-platzi.png" alt="logo-platzi"></header>
+    
+    <section class="main-not-found">
+        <div class="main-not-found__container">
+            <h1 class="animated pulse">Ooops!.. Error 404</h1>
+            <h2>Disculpa página no encontrada</h2>
+        </div>
+    </section>
+    <footer class="footer">
+        <a href="/">Términos de uso</a>
+        <a href="/">Declaracion de privacidad</a>
+        <a href="/">Centro de ayuda</a>
+    </footer>
+</body>
+</html>

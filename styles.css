@@ -1,0 +1,379 @@
+@charset "UTF-8";
+.flex, .footer, .login__container--social-media > div, .login, .container-carousel, .main, .header-sesion, .header {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  margin: 0px;
+  background-color: #8F57FD;
+  font-family: "Mulish", sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  justify-content: space-between;
+}
+
+.header-sesion {
+  width: 100%;
+  height: 100px;
+  justify-content: space-between;
+  background-color: #21C08B;
+}
+
+.header__img {
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.header__menu {
+  margin-right: 30px;
+}
+
+.header__menu ul {
+  display: none;
+  list-style: none;
+  padding: 0px;
+  position: absolute;
+  /*width: 100px;*/
+  text-align: right;
+  margin: 0px 0px 0px -14px;
+}
+
+.header__menu:hover ul, ul:hover {
+  display: block;
+}
+
+.header__menu li {
+  margin: 10px 0px;
+}
+
+.header__menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.header__menu li a:hover {
+  text-decoration: underline;
+}
+
+.header__menu--profile {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.header__menu--profile img {
+  margin-right: 8px;
+  width: 40px;
+}
+
+.header__menu--profile p {
+  margin: 0px;
+  color: white;
+}
+
+.main {
+  flex-direction: column;
+  padding-top: 30px;
+  height: 150px;
+  /*min-height: calc(100vh - 200px);*/
+}
+
+.main__title {
+  color: white;
+  font-size: 25px;
+}
+
+.main .input {
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  height: 50px;
+  padding: 0px 20px;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.categories__title {
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  padding-left: 30px;
+  width: 100px;
+}
+
+.container-carousel {
+  flex-direction: row;
+}
+
+.container-carousel__itemleft {
+  width: 30px;
+  padding: 0px 15px;
+}
+
+.container-carousel__itemright {
+  width: 30px;
+  padding: 0px 15px;
+}
+
+.container-carousel__itemleft img, .container-carousel__itemright img {
+  width: 40px;
+}
+
+.carousel {
+  /*width: 100%;*/
+  overflow: hidden;
+  /*Para que no aparezca el scroll abajo del contenedor principal*/
+  /*padding-left: 30px;*/
+  position: relative;
+  /* Para que los elementos internos se posicionaran en relación al padre */
+}
+
+.carousel__container {
+  /* 
+      los div por default son wrap, se van hacia abajo el siguiente elemento, entonces con 
+      nowrap podemos hacer un infinito hacia la derecha
+  */
+  font-size: 0;
+  white-space: nowrap;
+  margin: 70px 0px;
+  padding-bottom: 10px;
+}
+
+.carousel__container:hover .carousel-item {
+  opacity: 0.3;
+  /*Para que aparezca el scroll abajo del contenedor principal*/
+}
+
+.carousel-item {
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  background-color: royalblue;
+  /* 
+      El contenido maximo que se puede visualizar depende del tamaño del elemetno padre, pero sin
+      que aparezca el scroll por eso es hidden
+  */
+  overflow: hidden;
+  margin-right: 10px;
+  /* 
+      Todos los elementos tienen display por defecto, en este caso usamos inline-block para que aparezca
+      uno al lado del otro
+  */
+  display: inline-block;
+  cursor: pointer;
+  /*esto significa que si l elemento tiene transiciones ser haran con un tiempo suave y un direccionamiento*/
+  transition: 450ms all;
+  transform-origin: center left;
+  position: relative;
+  /* para que los hijos tomen la posicion*/
+}
+
+/*
+El selector ~ de CSS nos permite dar estilos a todos que cumplan los requisitos y sean “hermanos directos”, es decir, que tengan el mismo elemento padre.
+*/
+.carousel-item:hover ~ .carousel-item {
+  /* Mover a la derecha los elementos 100px */
+  transform: translate3d(100px, 0, 0);
+}
+
+.carousel__container:hover .carousel-item {
+  opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.carousel-item__img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  /*para que la imagen no se desforme*/
+}
+
+.carousel-item__details {
+  align-items: flex-start;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  bottom: 0;
+  display: flex;
+  font-size: 10px;
+  flex-direction: column;
+  justify-content: flex-end;
+  left: 0;
+  opacity: 0;
+  transition: 450ms opacity;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.carousel-item__details:hover {
+  /*transform: scale(1.5);*/
+  opacity: 1;
+}
+
+.carousel-item__details--img {
+  width: 20px;
+}
+
+.carousel-item__details--title {
+  color: white;
+  margin: 5px 0px 0px 0px;
+}
+
+.carousel-item__details--subtitle {
+  color: white;
+  font-size: 8px;
+  margin: 3px 0px;
+}
+
+::placeholder {
+  color: white;
+}
+
+.login {
+  background: linear-gradient(#21C08B, #AB88FF);
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 30px;
+  min-height: calc(100vh - 200px);
+}
+
+.login__container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 40px;
+  color: white;
+  padding: 60px 68px 40px;
+  min-height: 700px;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.login__container--form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__container--form label {
+  font-size: 14px;
+}
+
+.login__container--remember-me {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.login__container--remember-me a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login__container--remember-me a:hover {
+  text-decoration: underline;
+}
+
+.login__container--social-media > div {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login__container--social-media > div > img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.login__container--register {
+  font-size: 14px;
+}
+
+.login__container--register a {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  /* Para quitar el subrayado */
+}
+
+.login__container--register a:hover {
+  text-decoration: underline;
+  /* para agregar el subrayado */
+}
+
+.input {
+  background-color: transparent;
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid white;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  outline: none;
+  /*para que no se vean los bordes azules por default*/
+  height: 50px;
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Mulish", sans-serif;
+  height: 50px;
+  letter-spacing: 1px;
+  margin: 10px 0px;
+}
+
+.footer {
+  height: 100px;
+  width: 100%;
+  background-color: #AB88FF;
+}
+
+.footer a {
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .login__container {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
